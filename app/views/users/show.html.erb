@@ -16,7 +16,7 @@
           </div>
           <div class="user_info-box">
             <div class="sex">
-              <p>性別：<%= @user.sex %></p>
+              <p>性別：<%= @user.sex_i18n %></p>
             </div>
             <div class="birthday">
               <p>生年月日：<%= @user.birthday.strftime("%Y年%m月%d日") %></p>
@@ -36,8 +36,8 @@
       <div class="user_sidebar-box">
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><%= link_to "プロフィール編集", edit_user_path(@user) %></li>
+          <li class="list-group-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           <li class="list-group-item"><%= link_to "退会する", user_path(@user), method: :delete %></li>
-          <li class="list-group-item"></li>
           <li class="list-group-item"></li>
           <li class="list-group-item"></li>
           <li class="list-group-item"></li>
