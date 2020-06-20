@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= form_for @suggest do |f| %>
+        <div class="field">
+          <%= f.label :title, "掲載タイトル" %>
+          <%= f.text_field :title, autofocus: true, autocomplete: "title", class:"form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :price, "単価" %><br />
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputPrice">時給</label>
+            </div>
+            <%= f.number_field :price, autofocus: true, autocomplete: "price", class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.label :start_datetime, "始業時間" %><br />
+          <%= f.datetime_field :start_datetime, autofocus: true, autocomplete: "start_datetime", class:"form-control" %>
+          <%= f.label :end_datetime, "終業時間" %><br />
+          <%= f.datetime_field :end_datetime, autofocus: true, autocomplete: "end_datetime", class:"form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :detail, "掲載内容詳細" %><br />
+          <%= f.text_area :detail, autofocus: true, autocomplete: "detail", class:"form-control" %>
+        </div>
+
+        <div class="actions ma-t-50">
+          <%= f.submit "編集する" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
