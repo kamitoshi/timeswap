@@ -21,12 +21,12 @@
 
             <div class="field">
               <%= f.label :name, "氏名" %>
-              <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control" %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control", placeholder: "例:山田　太郎" %>
             </div>
 
             <div class="field">
               <%= f.label :kana_name, "カナ氏名" %><br />
-              <%= f.text_field :kana_name, autofocus: true, autocomplete: "kana_name", class:"form-control" %>
+              <%= f.text_field :kana_name, autofocus: true, autocomplete: "kana_name", class:"form-control", placeholder: "例:ヤマダ　タロウ" %>
             </div>
 
             <div class="field">
@@ -51,8 +51,33 @@
             </div>
 
             <div class="field">
+              <%= f.label :postal_code, "郵便番号（ハイフンなし）" %><br />
+              <%= f.number_field :postal_code, autofocus: true, autocomplete: "postal_code", class:"form-control", placeholder: "例:1610001" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :prefecture, "都道府県" %><br>
+              <%= f.select :prefecture, User.prefectures.keys, {prompt: '選択してください'}, class: 'form-control' %>
+            </div>
+
+            <div class="field">
+              <%= f.label :city, "市区町村" %><br />
+              <%= f.text_field :city, autofocus: true, autocomplete: "city", class:"form-control", placeholder: "例:新宿区三丁目" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :street, "番地" %><br />
+              <%= f.text_field :street, autofocus: true, autocomplete: "street", class:"form-control", placeholder: "例:1-20" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :building, "マンション名等" %><br />
+              <%= f.text_field :building, autofocus: true, autocomplete: "building", class:"form-control", placeholder: "例:メゾン　３０２号室" %>
+            </div>
+
+            <div class="field">
               <%= f.label :phone_number, "電話番号（ハイフンなし）" %><br />
-              <%= f.number_field :phone_number, autofocus: true, autocomplete: "phone_number", class:"form-control" %>
+              <%= f.number_field :phone_number, autofocus: true, autocomplete: "phone_number", class:"form-control", placeholder: "例:08012345678" %>
             </div>
 
             <div class="field">

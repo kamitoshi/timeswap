@@ -21,6 +21,12 @@
             <div class="birthday">
               <p>生年月日：<%= @user.birthday.strftime("%Y年%m月%d日") %></p>
             </div>
+            <div class="address">
+              <p>
+                〒<%= @user.postal_code %><br>
+                <%= @user.address %>
+              </p>
+            </div>
             <div class="phone_number">
               <p>電話番号：<%= @user.phone_number %></p>
             </div>

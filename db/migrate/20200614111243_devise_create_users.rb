@@ -34,9 +34,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :name, null: false
       t.string :kana_name, null: false
-      t.integer :sex
-      t.date :birthday
-      t.string :phone_number
+      t.integer :sex, null: false
+      t.date :birthday, null: false
+      t.string :phone_number, null: false
+      t.string :postal_code, null: false
+      t.integer :prefecture, null: false
+      t.string :city, null: false
+      t.string :street, null: false
+      t.string :building
       t.text :introduction
       t.string :image
       t.boolean :person
