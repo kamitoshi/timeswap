@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_111243) do
+ActiveRecord::Schema.define(version: 2020_06_20_002342) do
+
+  create_table "suggests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title", null: false
+    t.text "detail"
+    t.string "price", null: false
+    t.datetime "start_datetime", null: false
+    t.datetime "end_datetime", null: false
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["end_datetime"], name: "index_suggests_on_end_datetime"
+    t.index ["start_datetime"], name: "index_suggests_on_start_datetime"
+    t.index ["user_id"], name: "index_suggests_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -49,4 +64,5 @@ ActiveRecord::Schema.define(version: 2020_06_14_111243) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "suggests", "users"
 end

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="suggest_title">
+        <%= @suggest.title %>
+      </div>
+      <div class="suggest_user">
+        <%= link_to @suggest.user.name, user_path(@suggest.user) %>
+      </div>
+      <div class="suggest_info-box">
+        <div class="suggest_price">
+          <h3>時給　¥<%= @suggest.price %></h3>
+        </div>
+        <div class="suggest_time">
+          <%= @suggest.start_datetime.strftime("%Y年%m月%d日") %><br>
+          <%= @suggest.start_datetime.strftime("%H:%M") %>〜<%= @suggest.end_datetime.strftime("%H:%M") %>
+        </div>
+        <div class="suggest_detail">
+          <p>掲載内容</p>
+          <%= @suggest.detail %>
+        </div>
+      </div>
+      <div class="link-btn">
+        <%= link_to "一覧へ戻る", suggests_path, class:"btn btn-primary" %>
+        <%= link_to "編集する", edit_suggest_path(@suggest), class:"btn btn-primary" %>
+        <%= link_to "削除する", suggest_path(@suggest), method: :delete, data:{confirm:"本当に削除してよろしいですか？"}, class:"btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

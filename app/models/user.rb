@@ -18,6 +18,8 @@ class User < ApplicationRecord
     沖縄県:47
   }
 
+  has_many :suggests
+
   validates :name, presence: true, length:{maximum: 20}
   validates :kana_name, presence: true
   validates :sex, presence: true
